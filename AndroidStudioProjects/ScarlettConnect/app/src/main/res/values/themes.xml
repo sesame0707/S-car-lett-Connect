@@ -12,7 +12,12 @@
         <item name="colorSecondaryVariant">@color/white</item>
         <item name="colorOnSecondary">@color/white</item>
         <!-- Status bar color. -->
+        <item name="android:windowLightStatusBar">true</item>
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+    </style>
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/red</item>
     </style>
 
     <style name="Theme.ScarlettConnect" parent="Base.Theme.ScarlettConnect" />
