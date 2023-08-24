@@ -3,7 +3,7 @@
     <style name="Theme.Test1" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/purple_500</item>
-        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorPrimaryVariant">@color/purple_500</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/teal_200</item>
@@ -19,7 +19,11 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.Test1.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="Theme.Test1.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/orange</item>
+        <item name="actionMenuTextColor">@color/orange</item>
+        <item name="android:textColorSecondary">@color/orange</item>
+    </style>
 
     <style name="Theme.Test1.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
