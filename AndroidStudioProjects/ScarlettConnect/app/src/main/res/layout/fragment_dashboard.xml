@@ -8,165 +8,176 @@
 
     <SeekBar
         android:id="@+id/seekBar"
-        android:layout_width="320dp"
+        android:layout_width="250dp"
         android:layout_height="32dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginBottom="50dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <SeekBar
         android:id="@+id/seekBar2"
-        android:layout_width="512dp"
+        android:layout_width="500dp"
         android:layout_height="32dp"
-        android:layout_marginStart="-230dp"
+        android:layout_marginStart="-200dp"
         android:rotation="90"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button_stop"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:checkable="false"
-        android:contentDescription="@string/D1_description"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:itemIconTint="?attr/colorOnPrimary"
+    <TableLayout
+        android:id="@+id/tableLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-250dp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/seekBar2"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <Button
-        android:id="@+id/button_blank"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:checkable="false"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        android:visibility="invisible"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toStartOf="@+id/button_stop"
-        app:layout_constraintTop_toTopOf="parent" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp">
 
-    <Button
-        android:id="@+id/button_rgb_stripe"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:checkable="false"
-        android:contentDescription="@string/L2_description"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_stop" />
+            <Button
+                android:id="@+id/button_blank"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                android:visibility="invisible"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/baseline_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary" />
 
-    <Button
-        android:id="@+id/button_driving_lights"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:checkable="false"
-        android:contentDescription="@string/L1_description"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toStartOf="@+id/button_rgb_stripe"
-        app:layout_constraintTop_toBottomOf="@+id/button_blank" />
+            <Button
+                android:id="@+id/button_stop"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/D1_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/baseline_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/button_right_blinker"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:checkable="false"
-        android:contentDescription="@string/L3_description"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_rgb_stripe" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp">
 
-    <Button
-        android:id="@+id/button_left_blinker"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:checkable="false"
-        android:contentDescription="@string/L4_description"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toStartOf="@+id/button_right_blinker"
-        app:layout_constraintTop_toBottomOf="@+id/button_driving_lights" />
+            <Button
+                android:id="@+id/button_driving_lights"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/L1_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/baseline_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary" />
 
-    <Button
-        android:id="@+id/button_right_parking"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:checkable="false"
-        android:contentDescription="@string/P1_description"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button_right_blinker" />
+            <Button
+                android:id="@+id/button_rgb_stripe"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/L2_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/baseline_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary" />
+        </TableRow>
 
-    <Button
-        android:id="@+id/button_left_parking"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="50dp"
-        android:checkable="false"
-        android:contentDescription="@string/P3_description"
-        android:insetTop="0dp"
-        android:insetBottom="0dp"
-        app:cornerRadius="50dp"
-        app:icon="@drawable/baseline_settings_24"
-        app:iconGravity="textStart"
-        app:iconPadding="0dp"
-        app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toStartOf="@+id/button_right_parking"
-        app:layout_constraintTop_toBottomOf="@+id/button_left_blinker" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp">
+
+            <Button
+                android:id="@+id/button_left_blinker"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/L4_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/baseline_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary" />
+
+            <Button
+                android:id="@+id/button_right_blinker"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/L3_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/baseline_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp">
+
+            <Button
+                android:id="@+id/button_left_parking"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/P3_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/baseline_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary" />
+
+            <Button
+                android:id="@+id/button_right_parking"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/P1_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="50dp"
+                app:icon="@drawable/baseline_settings_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary" />
+        </TableRow>
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
