@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100mm"
+   height="100mm"
+   viewBox="0 0 100 100"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2.2 (732a01da63, 2022-12-09)"
+   sodipodi:docname="LED strip icon (v1).svg"
+   inkscape:export-filename="LED strip icon (v1).svg"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="1.4912879"
+     inkscape:cx="216.59131"
+     inkscape:cy="131.43002"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       id="rect930"
+       style="fill:#000000;stroke-width:2;stroke-dasharray:none"
+       d="M 11.322823 36.782251 L 11.322823 63.217847 L 88.677275 63.217847 L 88.677275 36.782251 L 11.322823 36.782251 z M 14.427543 39.886971 L 85.572555 39.886971 L 85.572555 60.113127 L 14.427543 60.113127 L 14.427543 39.886971 z " />
+    <path
+       id="rect1100"
+       style="fill:#000000;stroke-width:1.65;stroke-dasharray:none"
+       d="M 44.14521,44.14521 V 55.854789 H 55.854789 V 44.14521 Z m 2.048943,1.97604 h 7.611269 v 7.7575 h -7.611269 z" />
+    <path
+       id="path1105"
+       style="fill:#000000;stroke-width:1.65;stroke-dasharray:none"
+       d="m 65.967792,44.189565 v 11.70958 h 11.709579 v -11.70958 z m 2.048941,1.97604 h 7.611269 v 7.7575 h -7.611269 z" />
+    <path
+       id="path1107"
+       style="fill:#000000;stroke-width:1.65;stroke-dasharray:none"
+       d="m 22.322629,44.100854 v 11.70958 h 11.709578 v -11.70958 z m 2.048943,1.97604 h 7.611269 v 7.7575 h -7.611269 z" />
+  </g>
+</svg>

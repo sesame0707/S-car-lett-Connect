@@ -50,7 +50,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/left_blinker_icon_v1_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:itemIconTint="?attr/colorOnPrimary" />
@@ -65,7 +65,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/right_blinker_icon_v1_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:itemIconTint="?attr/colorOnPrimary" />
@@ -95,9 +95,11 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/stop_icon_v2_100"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="screen"
                 app:itemIconTint="?attr/colorOnPrimary" />
         </TableRow>
 
@@ -116,7 +118,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/left_parking_icon_v1_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:itemIconTint="?attr/colorOnPrimary" />
@@ -131,7 +133,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/right_parking_icon_v1_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:itemIconTint="?attr/colorOnPrimary" />
@@ -146,7 +148,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/headlight_icon_v2_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:itemIconTint="?attr/colorOnPrimary" />
@@ -161,7 +163,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/led_strip_icon_v1_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:itemIconTint="?attr/colorOnPrimary" />
