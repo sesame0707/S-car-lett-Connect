@@ -65,9 +65,11 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="50dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/stop_icon_v1"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
+                app:iconTint="#00FFFFFF"
+                app:iconTintMode="screen"
                 app:itemIconTint="?attr/colorOnPrimary" />
         </TableRow>
 
@@ -86,7 +88,7 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="50dp"
-                app:icon="@drawable/baseline_settings_24"
+                app:icon="@drawable/headlight_icon_v1"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
                 app:itemIconTint="?attr/colorOnPrimary" />
