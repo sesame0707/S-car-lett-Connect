@@ -14,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         val button = findViewById<Button>(R.id.button)
         button.setOnClickListener {
             Toast.makeText(this@MainActivity, "You clicked me.", Toast.LENGTH_SHORT).show()
-//            val client = Socket("192.168.4.3", 12345)
+//            val client = Socket("192.168.4.3", 80)
 //            client.getOutputStream().write(byteArrayOf(77, 100))
         }
     }
