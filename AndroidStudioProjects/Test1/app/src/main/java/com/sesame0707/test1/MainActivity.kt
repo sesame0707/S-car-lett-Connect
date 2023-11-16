@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
 import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import java.net.Socket
 
@@ -22,10 +23,12 @@ class MainActivity : AppCompatActivity() {
                     .permitAll().build()
                 StrictMode.setThreadPolicy(policy)
             }
-//            Toast.makeText(this@MainActivity, "You clicked me.", Toast.LENGTH_SHORT).show()
-            val client = Socket("192.168.4.3", 80)
-            client.getOutputStream().write(byteArrayOf(77, 100))
+
+            val client = Socket("192.168.4.1", 80)
+            client.getOutputStream().write(byteArrayOf(1))
             client.close()
+
+            Toast.makeText(this@MainActivity, "Data is sent!", Toast.LENGTH_SHORT).show()
         }
     }
 }
