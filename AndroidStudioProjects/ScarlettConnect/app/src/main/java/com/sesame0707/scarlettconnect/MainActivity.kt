@@ -60,9 +60,7 @@ class MainActivity : AppCompatActivity() {
         // Dynamic IP acquirement
         var wifiManager: WifiManager
         var dhcp: DhcpInfo
-        var targetIpAddress: String = "0.0.0.0"
-        Toast.makeText(this@MainActivity, "Target IP address: $targetIpAddress", Toast.LENGTH_SHORT)
-            .show()
+        var targetIpAddress = "0.0.0.0"
 
         thread {
             while (true) {
@@ -79,7 +77,13 @@ class MainActivity : AppCompatActivity() {
                 val client = Socket(targetIpAddress, 80)
                 client.getOutputStream().write(byteArrayOf(apiNumber))
                 client.close()
-                Toast.makeText(this@MainActivity, "Data is sent!", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(this@MainActivity, "Data is sent!", Toast.LENGTH_SHORT).show()
+//                Toast.makeText(
+//                    this@MainActivity,
+//                    "Target IP address: $targetIpAddress",
+//                    Toast.LENGTH_SHORT
+//                )
+//                    .show()
             } catch (e: Exception) {
                 Toast.makeText(
                     this@MainActivity,
