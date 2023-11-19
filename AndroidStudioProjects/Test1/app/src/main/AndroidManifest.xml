@@ -7,22 +7,25 @@
     <uses-permission android:name="android.permission.NEARBY_WIFI_DEVICES" />
     <!-- If your app derives location information from Wi-Fi APIs,
          don't include the "usesPermissionFlags" attribute. -->
-<!--        android:usesPermissionFlags="neverForLocation"-->
+    <!--        android:usesPermissionFlags="neverForLocation"-->
     <uses-permission
-        android:required="true"
-        android:name="android.permission.ACCESS_FINE_LOCATION"/>
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:required="true" />
     <uses-permission
-        android:required="true"
-        android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:required="true" />
     <uses-permission
-        android:required="true"
-        android:name="android.permission.ACCESS_WIFI_STATE"/>
+        android:name="android.permission.ACCESS_NETWORK_STATE"
+        android:required="true" />
     <uses-permission
-        android:required="true"
-        android:name="android.permission.CHANGE_WIFI_STATE"/>
+        android:name="android.permission.ACCESS_WIFI_STATE"
+        android:required="true" />
     <uses-permission
-        android:required="true"
-        android:name="android.permission.INTERNET"/>
+        android:name="android.permission.CHANGE_WIFI_STATE"
+        android:required="true" />
+    <uses-permission
+        android:name="android.permission.INTERNET"
+        android:required="true" />
 
     <application
         android:allowBackup="true"

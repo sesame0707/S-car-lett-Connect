@@ -1,9 +1,11 @@
 package com.sesame0707.test1
 
+import android.net.wifi.WifiManager
 import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import android.os.StrictMode.ThreadPolicy
+import android.text.format.Formatter
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -24,11 +26,25 @@ class MainActivity : AppCompatActivity() {
                 StrictMode.setThreadPolicy(policy)
             }
 
-            val client = Socket("192.168.4.1", 80)
-            client.getOutputStream().write(byteArrayOf(1))
-            client.close()
+            //Dynamic IP acquirement
+            val wifiManager = super.getSystemService(WIFI_SERVICE) as WifiManager
+            val dhcp = wifiManager.dhcpInfo
+            val targetIpAddress = Formatter.formatIpAddress(dhcp.gateway)
+            Toast.makeText(this@MainActivity, "IP address: $targetIpAddress", Toast.LENGTH_SHORT)
+                .show()
 
-            Toast.makeText(this@MainActivity, "Data is sent!", Toast.LENGTH_SHORT).show()
+            try {
+                val client = Socket(targetIpAddress, 80)
+                client.getOutputStream().write(byteArrayOf(1))
+                client.close()
+                Toast.makeText(this@MainActivity, "Data is sent!", Toast.LENGTH_SHORT).show()
+            } catch (e: Exception) {
+                Toast.makeText(
+                    this@MainActivity,
+                    "Car is not connected!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
         }
     }
 }
