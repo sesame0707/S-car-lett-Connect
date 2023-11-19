@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
                 StrictMode.setThreadPolicy(policy)
             }
 
-            //Dynamic IP acquirement
+            // Dynamic IP acquirement
             val wifiManager = super.getSystemService(WIFI_SERVICE) as WifiManager
             val dhcp = wifiManager.dhcpInfo
             val targetIpAddress = Formatter.formatIpAddress(dhcp.gateway)
