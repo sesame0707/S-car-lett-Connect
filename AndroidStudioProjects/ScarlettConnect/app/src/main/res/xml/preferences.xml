@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+    <PreferenceCategory>
+        app:title="@string/group_settings_connectivity"
+
+        <Preference
+            app:key="pref_settings_connect"
+            app:summary="@string/pref_settings_connect_summary"
+            app:title="@string/pref_settings_connect" />
+
+        <Preference
+            app:key="pref_settings_check_ip"
+            app:summary="@string/pref_settings_check_ip_summary"
+            app:title="@string/pref_settings_check_ip" />
+    </PreferenceCategory>
+</PreferenceScreen>

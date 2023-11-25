@@ -1,14 +1,14 @@
 <resources>
     <string name="app_name">S(car)lett Connect</string>
+
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
+
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
+
     <string name="L1_description">Toggle driving lights.</string>
     <string name="D1_description">Stop vehicle.</string>
     <string name="L4_description">Turn left blinker on.</string>
@@ -16,4 +16,10 @@
     <string name="L2_description">Toggle RGB stripe.</string>
     <string name="P3_description">Park to the left.</string>
     <string name="P1_description">Park to the right.</string>
+
+    <string name="group_settings_connectivity">Connectivity</string>
+    <string name="pref_settings_connect">Connect to the car</string>
+    <string name="pref_settings_connect_summary">In the next window, choose your car</string>
+    <string name="pref_settings_check_ip">Check car\'s IP address</string>
+    <string name="pref_settings_check_ip_summary">If wrong, connect to the desired car</string>
 </resources>
