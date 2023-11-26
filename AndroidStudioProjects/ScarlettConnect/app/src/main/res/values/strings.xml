@@ -22,4 +22,11 @@
     <string name="pref_settings_connect_summary">In the next window, choose your car</string>
     <string name="pref_settings_check_ip">Check car\'s IP address</string>
     <string name="pref_settings_check_ip_summary">If wrong, connect to the desired car</string>
+
+    <string name="app_author_heading">Author:</string>
+    <string name="app_version_heading">App version:</string>
+    <string name="app_description_heading">App description:</string>
+    <string name="app_author_content">Peter Grala</string>
+    <string name="app_version_content">1.x</string>
+    <string name="app_description_content">This app is made for driving S(car)lett cars, which are part of S(car)lett project.</string>
 </resources>
