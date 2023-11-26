@@ -6,33 +6,51 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <SeekBar
-        android:id="@+id/seekBar"
+    <com.google.android.material.slider.Slider
+        android:id="@+id/leftRightSeekBar"
         android:layout_width="500dp"
         android:layout_height="32dp"
         android:layout_marginBottom="30dp"
+        android:stepSize="1"
+        android:value="0"
+        android:valueFrom="-4"
+        android:valueTo="4"
+        app:trackHeight="16dp"
+        app:labelBehavior="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tableLayout"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout" />
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:thumbColor="?attr/colorOnPrimary"
+        app:tickColor="?attr/colorOnPrimary"
+        app:trackColor="?attr/colorPrimary" />
 
-    <SeekBar
-        android:id="@+id/seekBar2"
+    <com.google.android.material.slider.Slider
+        android:id="@+id/accelerateDecelerateSeekBar"
         android:layout_width="250dp"
         android:layout_height="32dp"
         android:layout_marginStart="-20dp"
-        android:rotation="90"
-        app:layout_constraintBottom_toBottomOf="@+id/seekBar"
+        android:rotation="270"
+        android:stepSize="1"
+        android:value="0"
+        android:valueFrom="-1"
+        android:valueTo="6"
+        app:trackHeight="16dp"
+        app:labelBehavior="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/leftRightSeekBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout" />
+        app:layout_constraintTop_toTopOf="@+id/tableLayout"
+        app:thumbColor="?attr/colorOnPrimary"
+        app:tickColor="?attr/colorOnPrimary"
+        app:trackColor="?attr/colorPrimary" />
 
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="-100dp"
-        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintBottom_toTopOf="@+id/leftRightSeekBar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/seekBar2"
+        app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar"
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
