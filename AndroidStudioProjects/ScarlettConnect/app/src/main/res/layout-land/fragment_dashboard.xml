@@ -8,40 +8,40 @@
 
     <com.google.android.material.slider.Slider
         android:id="@+id/leftRightSeekBar"
-        android:layout_width="500dp"
+        android:layout_width="300dp"
         android:layout_height="32dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="16dp"
         android:stepSize="1"
         android:value="0"
-        android:valueFrom="-4"
-        android:valueTo="4"
-        app:trackHeight="16dp"
+        android:valueFrom="-3"
+        android:valueTo="3"
         app:labelBehavior="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/tableLayout"
         app:layout_constraintStart_toStartOf="@+id/tableLayout"
         app:thumbColor="?attr/colorOnPrimary"
         app:tickColor="?attr/colorOnPrimary"
-        app:trackColor="?attr/colorPrimary" />
+        app:trackColor="?attr/colorPrimary"
+        app:trackHeight="16dp" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/accelerateDecelerateSeekBar"
-        android:layout_width="250dp"
+        android:layout_width="300dp"
         android:layout_height="32dp"
-        android:layout_marginStart="-20dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginBottom="130dp"
         android:rotation="270"
         android:stepSize="1"
         android:value="0"
-        android:valueFrom="-1"
-        android:valueTo="6"
-        app:trackHeight="16dp"
+        android:valueFrom="-2"
+        android:valueTo="4"
         app:labelBehavior="gone"
         app:layout_constraintBottom_toBottomOf="@+id/leftRightSeekBar"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tableLayout"
         app:thumbColor="?attr/colorOnPrimary"
         app:tickColor="?attr/colorOnPrimary"
-        app:trackColor="?attr/colorPrimary" />
+        app:trackColor="?attr/colorPrimary"
+        app:trackHeight="16dp" />
 
     <TableLayout
         android:id="@+id/tableLayout"
@@ -188,5 +188,65 @@
         </TableRow>
 
     </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-138dp"
+        android:layout_marginTop="-125dp"
+        android:src="@drawable/forward_indication_icon_v1_40"
+        app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar"
+        app:layout_constraintTop_toTopOf="@+id/accelerateDecelerateSeekBar" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-138dp"
+        android:layout_marginBottom="-125dp"
+        android:src="@drawable/backward_indication_icon_v1_40"
+        app:layout_constraintBottom_toBottomOf="@+id/accelerateDecelerateSeekBar"
+        app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-138dp"
+        android:layout_marginTop="132dp"
+        android:src="@drawable/zero_fb_indication_icon_v1_40"
+        app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginBottom="-12dp"
+        android:src="@drawable/left_indication_icon_v1_40"
+        app:layout_constraintBottom_toTopOf="@+id/leftRightSeekBar"
+        app:layout_constraintStart_toStartOf="@+id/leftRightSeekBar" />
+
+    <ImageView
+        android:id="@+id/imageView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="-12dp"
+        android:src="@drawable/right_indication_icon_v1_40"
+        app:layout_constraintBottom_toTopOf="@+id/leftRightSeekBar"
+        app:layout_constraintEnd_toEndOf="@+id/leftRightSeekBar" />
+
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-12dp"
+        android:src="@drawable/zero_lr_indication_icon_v1_40"
+        app:layout_constraintBottom_toTopOf="@+id/leftRightSeekBar"
+        app:layout_constraintEnd_toStartOf="@+id/imageView12"
+        app:layout_constraintStart_toEndOf="@+id/imageView11" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
