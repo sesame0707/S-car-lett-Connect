@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <PreferenceCategory
         android:summary="@string/group_settings_connectivity"
         android:title="Settings">
@@ -7,11 +8,13 @@
         <Preference
             android:key="pref_settings_connect"
             android:summary="@string/pref_settings_connect_summary"
-            android:title="@string/pref_settings_connect" />
+            android:title="@string/pref_settings_connect"
+            app:icon="@drawable/baseline_wifi_24" />
 
         <Preference
             android:key="pref_settings_check_ip"
             android:summary="@string/pref_settings_check_ip_summary"
-            android:title="@string/pref_settings_check_ip" />
+            android:title="@string/pref_settings_check_ip"
+            app:icon="@drawable/baseline_check_circle_24" />
     </PreferenceCategory>
 </PreferenceScreen>

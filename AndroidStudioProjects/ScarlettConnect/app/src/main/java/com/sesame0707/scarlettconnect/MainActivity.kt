@@ -19,6 +19,8 @@ import com.google.android.material.navigation.NavigationView
 import com.sesame0707.scarlettconnect.databinding.ActivityMainBinding
 import kotlin.concurrent.thread
 
+var targetIpAddress = "0.0.0.0"
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -58,7 +60,6 @@ class MainActivity : AppCompatActivity() {
         // Dynamic IP acquirement
         var wifiManager: WifiManager
         var dhcp: DhcpInfo
-        var targetIpAddress = "0.0.0.0"
 
         thread {
             while (true) {
