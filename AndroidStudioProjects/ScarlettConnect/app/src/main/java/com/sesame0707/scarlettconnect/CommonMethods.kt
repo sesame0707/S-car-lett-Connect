@@ -21,7 +21,12 @@ class CommonMethods {
         return toast
     }
 
-    fun sendWifiDirectPacket(_toast: Toast?, context: Context?, apiNumber: Byte): Toast? {
+    fun sendWifiDirectPacket(
+        _toast: Toast?,
+        context: Context?,
+        apiNumber: Byte,
+        silentPacket: Boolean = false
+    ): Toast? {
         var toast = _toast
         lateinit var dhcp: DhcpInfo
 
@@ -31,7 +36,9 @@ class CommonMethods {
             client.getOutputStream().write(byteArrayOf(apiNumber))
             client.close()
         } catch (e: Exception) {
-            toast = showToast(toast, context, "Car is not connected!")
+            if (!silentPacket) {
+                toast = showToast(toast, context, "Car is not connected!")
+            }
         }
         return toast
     }

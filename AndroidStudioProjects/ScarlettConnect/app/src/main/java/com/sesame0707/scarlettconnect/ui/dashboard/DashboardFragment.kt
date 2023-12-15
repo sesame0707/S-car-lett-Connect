@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.sesame0707.scarlettconnect.CommonMethods
 import com.sesame0707.scarlettconnect.CommonVariables
 import com.sesame0707.scarlettconnect.databinding.FragmentDashboardBinding
+import kotlin.concurrent.thread
 
 class DashboardFragment : Fragment() {
 
@@ -71,6 +72,21 @@ class DashboardFragment : Fragment() {
         buttonRightParking.setOnClickListener {
             CommonVariables.toast =
                 commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 7)
+        }
+
+        thread {
+            while (true) {
+                activity?.runOnUiThread {
+                    CommonVariables.toast =
+                        commonMethods!!.sendWifiDirectPacket(
+                            CommonVariables.toast,
+                            context,
+                            21,
+                            true
+                        )
+                }
+                Thread.sleep(5000)
+            }
         }
 
         return root
