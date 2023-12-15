@@ -48,7 +48,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="-130dp"
-        app:layout_constraintBottom_toTopOf="@+id/leftRightSeekBar"
+        app:layout_constraintBottom_toTopOf="@+id/imageView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar"
         app:layout_constraintTop_toTopOf="parent">
