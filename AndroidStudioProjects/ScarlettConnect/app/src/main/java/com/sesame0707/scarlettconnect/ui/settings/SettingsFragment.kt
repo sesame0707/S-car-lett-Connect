@@ -21,7 +21,6 @@ class SettingsFragment : PreferenceFragmentCompat() {
 
         prefSettingsConnect = findPreference("pref_settings_connect")
         prefSettingsCheckIp = findPreference("pref_settings_check_ip")
-//        CommonVariables.toast = Toast.makeText(context, null, Toast.LENGTH_SHORT)
         commonMethods = CommonMethods()
 
         prefSettingsConnect?.setOnPreferenceClickListener {
