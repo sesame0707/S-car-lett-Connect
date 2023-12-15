@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.android.material.slider.Slider
 import com.sesame0707.scarlettconnect.CommonMethods
 import com.sesame0707.scarlettconnect.CommonVariables
 import com.sesame0707.scarlettconnect.databinding.FragmentDashboardBinding
@@ -20,6 +21,8 @@ class DashboardFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private var commonMethods: CommonMethods? = null
+    private var accelerateDecelerateSeekBar: Slider? = null
+    private var leftRightSeekBar: Slider? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,12 +33,32 @@ class DashboardFragment : Fragment() {
         val root: View = binding.root
         CommonVariables.toast = Toast.makeText(context, null, Toast.LENGTH_SHORT)
         commonMethods = CommonMethods()
+        accelerateDecelerateSeekBar = _binding!!.accelerateDecelerateSeekBar
+        leftRightSeekBar = _binding!!.leftRightSeekBar
 
         // Button onClick events
         val buttonStop: Button = _binding!!.buttonStop
         buttonStop.setOnClickListener {
             CommonVariables.toast =
                 commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 1)
+
+            // Setting accelerateDecelerateSeekBar to neutral state
+            while (accelerateDecelerateSeekBar!!.value.toInt() != 0) {
+                if (accelerateDecelerateSeekBar!!.value > 0) {
+                    accelerateDecelerateSeekBar!!.value = accelerateDecelerateSeekBar!!.value - 1
+                } else {
+                    accelerateDecelerateSeekBar!!.value = accelerateDecelerateSeekBar!!.value + 1
+                }
+            }
+
+            // Setting leftRightSeekBar to neutral state
+            while (leftRightSeekBar!!.value.toInt() != 0) {
+                if (leftRightSeekBar!!.value > 0) {
+                    leftRightSeekBar!!.value = leftRightSeekBar!!.value - 1
+                } else {
+                    leftRightSeekBar!!.value = leftRightSeekBar!!.value + 1
+                }
+            }
         }
 
         val buttonDrivingLights: Button = _binding!!.buttonDrivingLights
