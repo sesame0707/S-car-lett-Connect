@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.sesame0707.scarlettconnect.BuildConfig
 import com.sesame0707.scarlettconnect.R
 import com.sesame0707.scarlettconnect.databinding.FragmentAboutBinding
@@ -25,9 +24,6 @@ class AboutFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val aboutViewModel =
-            ViewModelProvider(this).get(AboutViewModel::class.java)
-
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         val root: View = binding.root
 

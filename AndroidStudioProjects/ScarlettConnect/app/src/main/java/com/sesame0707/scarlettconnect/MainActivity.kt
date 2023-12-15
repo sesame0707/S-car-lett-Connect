@@ -6,7 +6,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.StrictMode
 import android.text.format.Formatter
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.drawerlayout.widget.DrawerLayout
@@ -18,8 +17,6 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
 import com.sesame0707.scarlettconnect.databinding.ActivityMainBinding
 import kotlin.concurrent.thread
-
-var targetIpAddress = "0.0.0.0"
 
 class MainActivity : AppCompatActivity() {
 
@@ -65,7 +62,7 @@ class MainActivity : AppCompatActivity() {
             while (true) {
                 wifiManager = super.getSystemService(WIFI_SERVICE) as WifiManager
                 dhcp = wifiManager.dhcpInfo
-                targetIpAddress = Formatter.formatIpAddress(dhcp.gateway)
+                CommonVariables.targetIpAddress = Formatter.formatIpAddress(dhcp.gateway)
                 Thread.sleep(1000)
             }
         }
