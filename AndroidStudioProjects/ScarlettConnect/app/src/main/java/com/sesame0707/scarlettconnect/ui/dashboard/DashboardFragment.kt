@@ -22,7 +22,6 @@ class DashboardFragment : Fragment() {
     private val binding get() = _binding!!
     private var commonMethods: CommonMethods? = null
     private var accelerateDecelerateSeekBar: Slider? = null
-    private var leftRightSeekBar: Slider? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -34,7 +33,6 @@ class DashboardFragment : Fragment() {
         CommonVariables.toast = Toast.makeText(context, null, Toast.LENGTH_SHORT)
         commonMethods = CommonMethods()
         accelerateDecelerateSeekBar = _binding!!.accelerateDecelerateSeekBar
-        leftRightSeekBar = _binding!!.leftRightSeekBar
 
         // Button onClick events
         val buttonStop: Button = _binding!!.buttonStop
@@ -48,15 +46,6 @@ class DashboardFragment : Fragment() {
                     accelerateDecelerateSeekBar!!.value = accelerateDecelerateSeekBar!!.value - 1
                 } else {
                     accelerateDecelerateSeekBar!!.value = accelerateDecelerateSeekBar!!.value + 1
-                }
-            }
-
-            // Setting leftRightSeekBar to neutral state
-            while (leftRightSeekBar!!.value.toInt() != 0) {
-                if (leftRightSeekBar!!.value > 0) {
-                    leftRightSeekBar!!.value = leftRightSeekBar!!.value - 1
-                } else {
-                    leftRightSeekBar!!.value = leftRightSeekBar!!.value + 1
                 }
             }
         }
