@@ -6,51 +6,14 @@
     android:layout_height="match_parent"
     tools:context=".ui.dashboard.DashboardFragment">
 
-    <com.google.android.material.slider.Slider
-        android:id="@+id/leftRightSeekBar"
-        android:layout_width="300dp"
-        android:layout_height="32dp"
-        android:layout_marginBottom="16dp"
-        android:stepSize="1"
-        android:value="0"
-        android:valueFrom="-3"
-        android:valueTo="3"
-        app:labelBehavior="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
-        app:layout_constraintStart_toStartOf="@+id/tableLayout"
-        app:thumbColor="?attr/colorOnPrimary"
-        app:tickColor="?attr/colorOnPrimary"
-        app:trackColor="?attr/colorPrimary"
-        app:trackHeight="16dp" />
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/accelerateDecelerateSeekBar"
-        android:layout_width="300dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="-100dp"
-        android:layout_marginBottom="130dp"
-        android:rotation="270"
-        android:stepSize="1"
-        android:value="0"
-        android:valueFrom="-2"
-        android:valueTo="4"
-        app:labelBehavior="gone"
-        app:layout_constraintBottom_toBottomOf="@+id/leftRightSeekBar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:thumbColor="?attr/colorOnPrimary"
-        app:tickColor="?attr/colorOnPrimary"
-        app:trackColor="?attr/colorPrimary"
-        app:trackHeight="16dp" />
-
     <TableLayout
         android:id="@+id/tableLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="-100dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView13"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewZeroLr"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar"
+        app:layout_constraintStart_toEndOf="@+id/sliderAccelerateDecelerate"
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
@@ -59,22 +22,7 @@
             android:layout_marginTop="0dp">
 
             <Button
-                android:id="@+id/button_left_blinker"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="20dp"
-                android:checkable="false"
-                android:contentDescription="@string/L4_description"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                app:cornerRadius="40dp"
-                app:icon="@drawable/left_blinker_icon_v1_80"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:itemIconTint="?attr/colorOnPrimary" />
-
-            <Button
-                android:id="@+id/button_right_blinker"
+                android:id="@+id/buttonLeftBlinker"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
@@ -83,13 +31,30 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
+                app:icon="@drawable/left_blinker_icon_v1_80"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/buttonRightBlinker"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/L4_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="40dp"
                 app:icon="@drawable/right_blinker_icon_v1_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:itemIconTint="?attr/colorOnPrimary" />
+                app:itemIconTint="?attr/colorOnPrimary"
+                tools:ignore="ButtonStyle" />
 
             <Button
-                android:id="@+id/button_blank"
+                android:id="@+id/buttonBlank"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
@@ -101,10 +66,11 @@
                 app:icon="@drawable/baseline_settings_24"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:itemIconTint="?attr/colorOnPrimary" />
+                app:itemIconTint="?attr/colorOnPrimary"
+                tools:ignore="ButtonStyle" />
 
             <Button
-                android:id="@+id/button_stop"
+                android:id="@+id/buttonStop"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
@@ -118,7 +84,9 @@
                 app:iconPadding="0dp"
                 app:iconTint="#00FFFFFF"
                 app:iconTintMode="screen"
-                app:itemIconTint="?attr/colorOnPrimary" />
+                app:itemIconTint="?attr/colorOnPrimary"
+                tools:ignore="ButtonStyle" />
+
         </TableRow>
 
         <TableRow
@@ -127,22 +95,7 @@
             android:layout_marginBottom="0dp">
 
             <Button
-                android:id="@+id/button_left_parking"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="20dp"
-                android:checkable="false"
-                android:contentDescription="@string/P3_description"
-                android:insetTop="0dp"
-                android:insetBottom="0dp"
-                app:cornerRadius="40dp"
-                app:icon="@drawable/left_parking_icon_v1_80"
-                app:iconGravity="textStart"
-                app:iconPadding="0dp"
-                app:itemIconTint="?attr/colorOnPrimary" />
-
-            <Button
-                android:id="@+id/button_right_parking"
+                android:id="@+id/buttonLeftParking"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
@@ -151,13 +104,30 @@
                 android:insetTop="0dp"
                 android:insetBottom="0dp"
                 app:cornerRadius="40dp"
+                app:icon="@drawable/left_parking_icon_v1_80"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp"
+                app:itemIconTint="?attr/colorOnPrimary"
+                tools:ignore="ButtonStyle" />
+
+            <Button
+                android:id="@+id/buttonRightParking"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_margin="20dp"
+                android:checkable="false"
+                android:contentDescription="@string/P2_description"
+                android:insetTop="0dp"
+                android:insetBottom="0dp"
+                app:cornerRadius="40dp"
                 app:icon="@drawable/right_parking_icon_v1_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:itemIconTint="?attr/colorOnPrimary" />
+                app:itemIconTint="?attr/colorOnPrimary"
+                tools:ignore="ButtonStyle" />
 
             <Button
-                android:id="@+id/button_driving_lights"
+                android:id="@+id/buttonDrivingLights"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
@@ -169,10 +139,11 @@
                 app:icon="@drawable/headlight_icon_v2_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:itemIconTint="?attr/colorOnPrimary" />
+                app:itemIconTint="?attr/colorOnPrimary"
+                tools:ignore="ButtonStyle" />
 
             <Button
-                android:id="@+id/button_rgb_stripe"
+                android:id="@+id/buttonRgbStripe"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
                 android:layout_margin="20dp"
@@ -184,69 +155,116 @@
                 app:icon="@drawable/led_strip_icon_v1_80"
                 app:iconGravity="textStart"
                 app:iconPadding="0dp"
-                app:itemIconTint="?attr/colorOnPrimary" />
-        </TableRow>
+                app:itemIconTint="?attr/colorOnPrimary"
+                tools:ignore="ButtonStyle" />
 
+        </TableRow>
     </TableLayout>
 
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderAccelerateDecelerate"
+        android:layout_width="300dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="-100dp"
+        android:layout_marginBottom="130dp"
+        android:contentDescription="@string/D2_D3_description"
+        android:rotation="270"
+        android:stepSize="1"
+        android:value="0"
+        android:valueFrom="-2"
+        android:valueTo="4"
+        app:labelBehavior="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderLeftRight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:thumbColor="?attr/colorOnPrimary"
+        app:tickColor="?attr/colorOnPrimary"
+        app:trackColor="?attr/colorPrimary"
+        app:trackHeight="16dp"
+        tools:ignore="VisualLintBounds" />
+
     <ImageView
-        android:id="@+id/imageView8"
+        android:id="@+id/imageViewForward"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="-138dp"
         android:layout_marginTop="-125dp"
+        android:contentDescription="@string/imageViewForward_description"
         android:src="@drawable/forward_indication_icon_v1_40"
-        app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar"
-        app:layout_constraintTop_toTopOf="@+id/accelerateDecelerateSeekBar" />
+        app:layout_constraintStart_toEndOf="@+id/sliderAccelerateDecelerate"
+        app:layout_constraintTop_toTopOf="@+id/sliderAccelerateDecelerate" />
 
     <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="-138dp"
-        android:layout_marginBottom="-125dp"
-        android:src="@drawable/backward_indication_icon_v1_40"
-        app:layout_constraintBottom_toBottomOf="@+id/accelerateDecelerateSeekBar"
-        app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar" />
-
-    <ImageView
-        android:id="@+id/imageView10"
+        android:id="@+id/imageViewZeroFb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="-138dp"
         android:layout_marginTop="132dp"
+        android:contentDescription="@string/imageViewZeroFb_description"
         android:src="@drawable/zero_fb_indication_icon_v1_40"
-        app:layout_constraintStart_toEndOf="@+id/accelerateDecelerateSeekBar"
-        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+        app:layout_constraintStart_toEndOf="@+id/sliderAccelerateDecelerate"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewForward" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/imageViewBackward"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="-138dp"
+        android:layout_marginBottom="-125dp"
+        android:contentDescription="@string/imageViewBackward_description"
+        android:src="@drawable/backward_indication_icon_v1_40"
+        app:layout_constraintBottom_toBottomOf="@+id/sliderAccelerateDecelerate"
+        app:layout_constraintStart_toEndOf="@+id/sliderAccelerateDecelerate" />
+
+    <com.google.android.material.slider.Slider
+        android:id="@+id/sliderLeftRight"
+        android:layout_width="300dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="16dp"
+        android:contentDescription="@string/D4_D5_description"
+        android:stepSize="1"
+        android:value="0"
+        android:valueFrom="-3"
+        android:valueTo="3"
+        app:labelBehavior="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tableLayout"
+        app:layout_constraintStart_toStartOf="@+id/tableLayout"
+        app:thumbColor="?attr/colorOnPrimary"
+        app:tickColor="?attr/colorOnPrimary"
+        app:trackColor="?attr/colorPrimary"
+        app:trackHeight="16dp" />
+
+    <ImageView
+        android:id="@+id/imageViewLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="2dp"
         android:layout_marginBottom="-12dp"
+        android:contentDescription="@string/imageViewLeft_description"
         android:src="@drawable/left_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/leftRightSeekBar"
-        app:layout_constraintStart_toStartOf="@+id/leftRightSeekBar" />
+        app:layout_constraintBottom_toTopOf="@+id/sliderLeftRight"
+        app:layout_constraintStart_toStartOf="@+id/sliderLeftRight" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/imageViewZeroLr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="-12dp"
+        android:contentDescription="@string/imageViewZeroLr_description"
+        android:src="@drawable/zero_lr_indication_icon_v1_40"
+        app:layout_constraintBottom_toTopOf="@+id/sliderLeftRight"
+        app:layout_constraintEnd_toStartOf="@+id/imageViewRight"
+        app:layout_constraintStart_toEndOf="@+id/imageViewLeft" />
+
+    <ImageView
+        android:id="@+id/imageViewRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="-12dp"
+        android:contentDescription="@string/imageViewRight_description"
         android:src="@drawable/right_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/leftRightSeekBar"
-        app:layout_constraintEnd_toEndOf="@+id/leftRightSeekBar" />
-
-    <ImageView
-        android:id="@+id/imageView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="-12dp"
-        android:src="@drawable/zero_lr_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/leftRightSeekBar"
-        app:layout_constraintEnd_toStartOf="@+id/imageView12"
-        app:layout_constraintStart_toEndOf="@+id/imageView11" />
+        app:layout_constraintBottom_toTopOf="@+id/sliderLeftRight"
+        app:layout_constraintEnd_toEndOf="@+id/sliderLeftRight" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

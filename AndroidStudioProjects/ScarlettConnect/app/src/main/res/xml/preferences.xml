@@ -1,20 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <PreferenceCategory
-        android:summary="@string/group_settings_connectivity"
+        android:summary="@string/preference_category_connectivity"
         android:title="Settings">
 
         <Preference
-            android:key="pref_settings_connect"
-            android:summary="@string/pref_settings_connect_summary"
-            android:title="@string/pref_settings_connect"
+            android:key="preference_connect"
+            android:summary="@string/preference_connect_summary"
+            android:title="@string/preference_connect_title"
             app:icon="@drawable/baseline_wifi_24" />
 
         <Preference
-            android:key="pref_settings_check_ip"
-            android:summary="@string/pref_settings_check_ip_summary"
-            android:title="@string/pref_settings_check_ip"
+            android:key="preference_check_ip"
+            android:summary="@string/preference_check_ip_summary"
+            android:title="@string/preference_check_ip_title"
             app:icon="@drawable/baseline_check_circle_24" />
+
     </PreferenceCategory>
 </PreferenceScreen>

@@ -21,8 +21,8 @@ class DashboardFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
     private var commonMethods: CommonMethods? = null
-    private var accelerateDecelerateSeekBar: Slider? = null
-    private var leftRightSeekBar: Slider? = null
+    private var sliderAccelerateDecelerate: Slider? = null
+    private var sliderLeftRight: Slider? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -33,8 +33,12 @@ class DashboardFragment : Fragment() {
         val root: View = binding.root
         CommonVariables.toast = Toast.makeText(context, null, Toast.LENGTH_SHORT)
         commonMethods = CommonMethods()
-        accelerateDecelerateSeekBar = _binding!!.accelerateDecelerateSeekBar
-        leftRightSeekBar = _binding!!.leftRightSeekBar
+        sliderAccelerateDecelerate = _binding!!.sliderAccelerateDecelerate
+        sliderAccelerateDecelerate!!.value =
+            CommonVariables.sliderAccelerateDecelerateCurrentValue.toFloat()
+        sliderLeftRight = _binding!!.sliderLeftRight
+        sliderLeftRight!!.value =
+            CommonVariables.sliderLeftRightCurrentValue.toFloat()
 
         // Button onClick events
         val buttonStop: Button = _binding!!.buttonStop
@@ -42,12 +46,12 @@ class DashboardFragment : Fragment() {
             CommonVariables.toast =
                 commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 1)
 
-            // Setting accelerateDecelerateSeekBar to neutral state
-            while (accelerateDecelerateSeekBar!!.value.toInt() != 0) {
-                if (accelerateDecelerateSeekBar!!.value > 0) {
-                    accelerateDecelerateSeekBar!!.value = accelerateDecelerateSeekBar!!.value - 1
+            // Setting sliderAccelerateDecelerate to neutral state
+            while (sliderAccelerateDecelerate!!.value.toInt() != 0) {
+                if (sliderAccelerateDecelerate!!.value > 0) {
+                    sliderAccelerateDecelerate!!.value = sliderAccelerateDecelerate!!.value - 1
                 } else {
-                    accelerateDecelerateSeekBar!!.value = accelerateDecelerateSeekBar!!.value + 1
+                    sliderAccelerateDecelerate!!.value = sliderAccelerateDecelerate!!.value + 1
                 }
             }
         }
@@ -105,32 +109,32 @@ class DashboardFragment : Fragment() {
         }
 
         // Slider onChange events
-        accelerateDecelerateSeekBar!!.addOnChangeListener(Slider.OnChangeListener { _, _, _ ->
-            CommonVariables.accelerateDecelerateSeekBarCurrentValue =
-                accelerateDecelerateSeekBar!!.value.toInt()
-            if (CommonVariables.accelerateDecelerateSeekBarCurrentValue > CommonVariables.accelerateDecelerateSeekBarPreviousValue) {
+        sliderAccelerateDecelerate!!.addOnChangeListener(Slider.OnChangeListener { _, _, _ ->
+            CommonVariables.sliderAccelerateDecelerateCurrentValue =
+                sliderAccelerateDecelerate!!.value.toInt()
+            if (CommonVariables.sliderAccelerateDecelerateCurrentValue > CommonVariables.sliderAccelerateDeceleratePreviousValue) {
                 CommonVariables.toast =
                     commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 11)
             } else {
                 CommonVariables.toast =
                     commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 12)
             }
-            CommonVariables.accelerateDecelerateSeekBarPreviousValue =
-                CommonVariables.accelerateDecelerateSeekBarCurrentValue
+            CommonVariables.sliderAccelerateDeceleratePreviousValue =
+                CommonVariables.sliderAccelerateDecelerateCurrentValue
         })
 
-        leftRightSeekBar!!.addOnChangeListener(Slider.OnChangeListener { _, _, _ ->
-            CommonVariables.leftRightSeekBarCurrentValue =
-                leftRightSeekBar!!.value.toInt()
-            if (CommonVariables.leftRightSeekBarCurrentValue > CommonVariables.leftRightSeekBarPreviousValue) {
+        sliderLeftRight!!.addOnChangeListener(Slider.OnChangeListener { _, _, _ ->
+            CommonVariables.sliderLeftRightCurrentValue =
+                sliderLeftRight!!.value.toInt()
+            if (CommonVariables.sliderLeftRightCurrentValue > CommonVariables.sliderLeftRightPreviousValue) {
                 CommonVariables.toast =
                     commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 14)
             } else {
                 CommonVariables.toast =
                     commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 13)
             }
-            CommonVariables.leftRightSeekBarPreviousValue =
-                CommonVariables.leftRightSeekBarCurrentValue
+            CommonVariables.sliderLeftRightPreviousValue =
+                CommonVariables.sliderLeftRightCurrentValue
         })
 
         return root

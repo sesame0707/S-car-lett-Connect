@@ -1,4 +1,5 @@
 <resources>
+    <!-- General -->
     <string name="app_name">S(car)lett Connect</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
@@ -9,23 +10,36 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_about">About</string>
 
-    <string name="L1_description">Toggle driving lights.</string>
+    <!-- Dashboard fragment -->
     <string name="D1_description">Stop vehicle.</string>
-    <string name="L4_description">Turn left blinker on.</string>
-    <string name="L3_description">Turn right blinker on.</string>
+    <string name="D2_D3_description">Accelerate or decelerate.</string>
+    <string name="D4_D5_description">Turn left or turn right.</string>
+    <string name="L1_description">Toggle driving lights.</string>
     <string name="L2_description">Toggle RGB stripe.</string>
-    <string name="P3_description">Park to the left.</string>
-    <string name="P1_description">Park to the right.</string>
+    <string name="L3_description">Turn left blinker on.</string>
+    <string name="L4_description">Turn right blinker on.</string>
+    <string name="P1_description">Toggle parking to the left.</string>
+    <string name="P2_description">Toggle parking to the right.</string>
 
-    <string name="group_settings_connectivity">Connectivity</string>
-    <string name="pref_settings_connect">Connect to the car</string>
-    <string name="pref_settings_connect_summary">In the next window, choose your car</string>
-    <string name="pref_settings_check_ip">Check car\'s IP address</string>
-    <string name="pref_settings_check_ip_summary">If wrong, connect to the desired car</string>
+    <string name="imageViewForward_description">F letter.</string>
+    <string name="imageViewZeroFb_description">0 number.</string>
+    <string name="imageViewBackward_description">B letter.</string>
+    <string name="imageViewLeft_description">L letter.</string>
+    <string name="imageViewZeroLr_description">0 number.</string>
+    <string name="imageViewRight_description">R letter.</string>
 
-    <string name="app_author_heading">Author:</string>
+    <!-- Settings fragment -->
+    <string name="preference_category_connectivity">Connectivity</string>
+    <string name="preference_connect_title">Connect to the car</string>
+    <string name="preference_connect_summary">In the next window, choose your car</string>
+    <string name="preference_check_ip_title">Check car\'s IP address</string>
+    <string name="preference_check_ip_summary">If wrong, connect to the desired car</string>
+
+    <!-- About fragment -->
+    <string name="app_author_heading">App author:</string>
     <string name="app_version_heading">App version:</string>
     <string name="app_description_heading">App description:</string>
+
     <string name="app_author_content">Peter Grala</string>
     <string name="app_description_content">This app is made for driving S(car)lett cars, which are part of S(car)lett project.</string>
 </resources>

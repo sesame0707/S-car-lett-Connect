@@ -27,7 +27,7 @@ class AboutFragment : Fragment() {
         _binding = FragmentAboutBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        textAppVersionContent = root.findViewById(R.id.text_app_version_content)
+        textAppVersionContent = root.findViewById(R.id.textViewAppVersionContent)
         textAppVersionContent.text = BuildConfig.VERSION_NAME
 
         return root
