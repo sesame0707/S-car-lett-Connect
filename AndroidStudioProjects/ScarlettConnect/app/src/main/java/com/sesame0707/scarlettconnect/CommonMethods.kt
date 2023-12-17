@@ -34,7 +34,11 @@ class CommonMethods {
             client.close()
         } catch (e: Exception) {
             if (!silentPacket) {
-                toast = showToast(toast, context, "Car is not connected!")
+                toast = showToast(
+                    toast,
+                    context,
+                    context?.getString(R.string.error_send_wifi_direct_packet)
+                )
             }
         }
 

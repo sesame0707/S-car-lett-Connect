@@ -11,30 +11,30 @@ import com.sesame0707.scarlettconnect.R
 
 class SettingsFragment : PreferenceFragmentCompat() {
 
-    private var prefSettingsConnect: Preference? = null
-    private var prefSettingsCheckIp: Preference? = null
+    private var preferenceConnect: Preference? = null
+    private var preferenceCheckIp: Preference? = null
     private var commonMethods: CommonMethods? = null
 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         setPreferencesFromResource(R.xml.preferences, rootKey)
 
-        prefSettingsConnect = findPreference("preference_connect")
-        prefSettingsCheckIp = findPreference("preference_check_ip")
+        preferenceConnect = findPreference("preference_connect")
+        preferenceCheckIp = findPreference("preference_check_ip")
         commonMethods = CommonMethods()
 
-        prefSettingsConnect?.setOnPreferenceClickListener {
+        preferenceConnect?.setOnPreferenceClickListener {
             val openWiFiSettingsIntent = Intent("android.settings.WIFI_SETTINGS")
             startActivity(openWiFiSettingsIntent)
             CommonVariables.toast = commonMethods!!.showToast(
                 CommonVariables.toast,
                 context,
-                "Choose your car and go back",
+                context?.getString(R.string.information_preference_connect),
                 Toast.LENGTH_LONG
             )
             true // Return true if the click is handled.
         }
 
-        prefSettingsCheckIp?.setOnPreferenceClickListener {
+        preferenceCheckIp?.setOnPreferenceClickListener {
             CommonVariables.toast = commonMethods!!.showToast(
                 CommonVariables.toast,
                 context,
