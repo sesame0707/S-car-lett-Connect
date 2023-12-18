@@ -36,6 +36,8 @@
     <string name="preference_check_ip_summary">If wrong, connect to the desired car</string>
 
     <!-- About fragment -->
+    <string name="imageViewAppLogo_description">S(car)lett Connect logo.</string>
+
     <string name="app_author_heading">App author:</string>
     <string name="app_version_heading">App version:</string>
     <string name="app_description_heading">App description:</string>

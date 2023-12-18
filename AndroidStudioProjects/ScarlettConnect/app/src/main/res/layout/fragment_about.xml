@@ -1,101 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.about.AboutFragment">
+    android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageViewAppLogo"
-        android:layout_width="280dp"
-        android:layout_height="140dp"
-        android:layout_marginTop="16dp"
-        android:src="@drawable/scarlett_connect_logo_v1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textViewAppAuthorHeading"
-        android:layout_width="150dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/app_author_heading"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAppLogo" />
+        tools:context=".ui.about.AboutFragment">
 
-    <TextView
-        android:id="@+id/textViewAppAuthorContent"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="48dp"
-        android:text="@string/app_author_content"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewAppLogo" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineLogosLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.15" />
 
-    <TextView
-        android:id="@+id/textViewAppVersionHeading"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:text="@string/app_version_heading"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAppAuthorHeading"
-        app:layout_constraintVertical_bias="0.0" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineLogosRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.85" />
 
-    <TextView
-        android:id="@+id/textViewAppVersionContent"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="48dp"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAppAuthorContent"
-        app:layout_constraintVertical_bias="0.0" />
+        <ImageView
+            android:id="@+id/imageViewAppLogo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/imageViewAppLogo_description"
+            android:src="@drawable/scarlett_connect_logo_v1"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineLogosRight"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLogosLeft"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textViewAppDescriptionHeading"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:text="@string/app_description_heading"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAppVersionHeading"
-        app:layout_constraintVertical_bias="0.0" />
+        <TextView
+            android:id="@+id/textViewAppDescriptionContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/app_description_content"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineLogosRight"
+            app:layout_constraintStart_toStartOf="@+id/guidelineLogosLeft"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAppDescriptionHeading" />
 
-    <TextView
-        android:id="@+id/textViewAppDescriptionContent"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="64dp"
-        android:text="@string/app_description_content"
-        android:textAlignment="textStart"
-        android:textAllCaps="false"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewAppDescriptionHeading" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineHeadings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.10" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textViewAppAuthorHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/app_author_heading"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineHeadings"
+            app:layout_constraintTop_toBottomOf="@+id/imageViewAppLogo"
+            tools:layout_editor_absoluteX="48dp" />
+
+        <TextView
+            android:id="@+id/textViewAppVersionHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_version_heading"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineHeadings"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAppAuthorHeading"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="48dp" />
+
+        <TextView
+            android:id="@+id/textViewAppDescriptionHeading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_description_heading"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineHeadings"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAppVersionHeading"
+            app:layout_constraintVertical_bias="0.0"
+            tools:layout_editor_absoluteX="48dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineContents"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <TextView
+            android:id="@+id/textViewAppAuthorContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_author_content"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/guidelineContents"
+            app:layout_constraintTop_toTopOf="@+id/textViewAppAuthorHeading" />
+
+        <TextView
+            android:id="@+id/textViewAppVersionContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/guidelineContents"
+            app:layout_constraintTop_toTopOf="@+id/textViewAppVersionHeading" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
