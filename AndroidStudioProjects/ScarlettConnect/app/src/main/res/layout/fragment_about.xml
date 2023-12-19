@@ -8,6 +8,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:paddingBottom="32dp"
         tools:context=".ui.about.AboutFragment">
 
         <androidx.constraintlayout.widget.Guideline
@@ -122,7 +123,6 @@
             android:textAlignment="textStart"
             android:textAllCaps="false"
             android:textSize="20sp"
-            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/guidelineContents"
             app:layout_constraintTop_toTopOf="@+id/textViewAppVersionHeading" />
 
