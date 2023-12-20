@@ -7,46 +7,45 @@
     tools:context=".ui.dashboard.DashboardFragment">
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTableTop"
+        android:id="@+id/guidelineButtonsTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.05" />
+        app:layout_constraintGuide_percent="0.06" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTableBottom"
+        android:id="@+id/guidelineButtonsBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.80" />
+        app:layout_constraintGuide_percent="0.78" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTableLeft"
+        android:id="@+id/guidelineButtonsLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.25" />
+        app:layout_constraintGuide_percent="0.32" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTableCenter"
+        android:id="@+id/guidelineButtonsCenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.60" />
+        app:layout_constraintGuide_percent="0.64" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineTableRight"
+        android:id="@+id/guidelineButtonsRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.95" />
+        app:layout_constraintGuide_percent="0.96" />
 
     <Button
         android:id="@+id/buttonBlank"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:checkable="false"
         android:insetTop="0dp"
         android:insetBottom="0dp"
@@ -57,18 +56,18 @@
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/buttonDrivingLights"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTableCenter"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineTableLeft"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTableTop"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonsTop"
         tools:ignore="ButtonStyle" />
 
     <Button
         android:id="@+id/buttonStop"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:checkable="false"
         android:contentDescription="@string/D1_description"
         android:insetTop="0dp"
@@ -81,18 +80,18 @@
         app:iconTintMode="screen"
         app:itemIconTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/buttonRgbStripe"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTableRight"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsRight"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineTableCenter"
-        app:layout_constraintTop_toTopOf="@+id/guidelineTableTop"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenter"
+        app:layout_constraintTop_toTopOf="@+id/guidelineButtonsTop"
         tools:ignore="ButtonStyle" />
 
     <Button
         android:id="@+id/buttonDrivingLights"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:checkable="false"
         android:contentDescription="@string/L1_description"
         android:insetTop="0dp"
@@ -103,18 +102,18 @@
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/buttonLeftBlinker"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTableCenter"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineTableLeft"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonBlank"
         tools:ignore="ButtonStyle" />
 
     <Button
         android:id="@+id/buttonRgbStripe"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:checkable="false"
         android:contentDescription="@string/L2_description"
         android:insetTop="0dp"
@@ -125,18 +124,18 @@
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/buttonRightBlinker"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTableRight"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsRight"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineTableCenter"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintTop_toBottomOf="@+id/buttonStop"
         tools:ignore="ButtonStyle" />
 
     <Button
         android:id="@+id/buttonLeftBlinker"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:checkable="false"
         android:contentDescription="@string/L3_description"
         android:insetTop="0dp"
@@ -147,18 +146,18 @@
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/buttonLeftParking"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTableCenter"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineTableLeft"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonDrivingLights"
         tools:ignore="ButtonStyle" />
 
     <Button
         android:id="@+id/buttonRightBlinker"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:checkable="false"
         android:contentDescription="@string/L4_description"
         android:insetTop="0dp"
@@ -169,18 +168,18 @@
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toTopOf="@+id/buttonRightParking"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTableRight"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsRight"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineTableCenter"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintTop_toBottomOf="@+id/buttonRgbStripe"
         tools:ignore="ButtonStyle" />
 
     <Button
         android:id="@+id/buttonLeftParking"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:checkable="false"
         android:contentDescription="@string/P1_description"
         android:insetTop="0dp"
@@ -190,19 +189,19 @@
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineTableBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTableCenter"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonsBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineTableLeft"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonLeftBlinker"
         tools:ignore="ButtonStyle" />
 
     <Button
         android:id="@+id/buttonRightParking"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_margin="15dp"
-        android:layout_weight="1"
         android:checkable="false"
         android:contentDescription="@string/P2_description"
         android:insetTop="0dp"
@@ -212,10 +211,11 @@
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineTableBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineTableRight"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineButtonsBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsRight"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/guidelineTableCenter"
+        app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintTop_toBottomOf="@+id/buttonRightBlinker"
         tools:ignore="ButtonStyle" />
 
@@ -266,7 +266,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.13" />
+        app:layout_constraintGuide_percent="0.125" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineForwardIndication"
