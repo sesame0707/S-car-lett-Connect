@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
     tools:context=".ui.dashboard.DashboardFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -11,35 +12,35 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.06" />
+        app:layout_constraintGuide_percent="0.07" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonsCenter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.38" />
+        app:layout_constraintGuide_percent="0.39" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonsBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.70" />
+        app:layout_constraintGuide_percent="0.71" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonsLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.22" />
+        app:layout_constraintGuide_percent="0.26" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineButtonsRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.90" />
+        app:layout_constraintGuide_percent="0.88" />
 
     <Button
         android:id="@+id/buttonLeftBlinker"
@@ -59,10 +60,9 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/buttonRightBlinker"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageViewForward"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonsTop"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonRightBlinker"
@@ -84,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonLeftBlinker"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonsTop"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonBlank"
@@ -96,7 +96,6 @@
         android:insetBottom="0dp"
         android:visibility="invisible"
         app:cornerRadius="@dimen/max_button_corner_radius"
-        app:icon="@drawable/baseline_settings_24"
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
@@ -127,9 +126,10 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineButtonsCenter"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsRight"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonBlank"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonsTop"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonLeftParking"
@@ -149,10 +149,9 @@
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/buttonRightParking"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/sliderAccelerateDecelerate"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonsCenter"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonRightParking"
@@ -174,7 +173,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonLeftParking"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonsCenter"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonDrivingLights"
@@ -196,7 +195,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonRightParking"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonsCenter"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonRgbStripe"
@@ -215,23 +214,40 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineButtonsBottom"
         app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/guidelineButtonsRight"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/buttonDrivingLights"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonsCenter"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
+
+    <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:clipChildren="false"-->
+    <!--        android:rotation="270"-->
+    <!--        tools:context=".ui.dashboard.DashboardFragment">-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSliderAccelerateDecelerateTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.44"
+        tools:ignore="VisualLintBounds" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineSliderAccelerateDecelerateBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.60" />
+        app:layout_constraintGuide_percent="0.58"
+        tools:ignore="VisualLintBounds" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineSliderAccelerateDecelerateLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="-0.12"
+        app:layout_constraintGuide_percent="-0.10"
         tools:ignore="VisualLintBounds" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -239,7 +255,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.24" />
+        app:layout_constraintGuide_percent="0.26" />
 
     <com.google.android.material.slider.Slider
         android:id="@+id/sliderAccelerateDecelerate"
@@ -255,76 +271,112 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineSliderAccelerateDecelerateBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineSliderAccelerateDecelerateRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineSliderAccelerateDecelerateLeft"
+        app:layout_constraintTop_toBottomOf="@+id/guidelineSliderAccelerateDecelerateTop"
         app:thumbColor="?attr/colorOnPrimary"
         app:tickColor="?attr/colorOnPrimary"
         app:trackColor="?attr/colorPrimary"
-        app:trackHeight="16dp"
         tools:ignore="VisualLintBounds" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineForwardBackwardIndications"
+        android:id="@+id/guidelineForwardBackwardIndicationsTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineForwardBackwardIndicationsBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineForwardBackwardIndicationsLeft"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.075" />
+        app:layout_constraintGuide_percent="0.095" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineForwardIndication"
+        android:id="@+id/guidelineForwardBackwardIndicationsRight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.11" />
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.14" />
 
     <ImageView
         android:id="@+id/imageViewForward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imageViewForward_description"
-        android:padding="2dp"
+        android:rotation="0"
         android:src="@drawable/forward_indication_icon_v1_40"
-        app:layout_constraintStart_toStartOf="@+id/guidelineForwardBackwardIndications"
-        app:layout_constraintTop_toTopOf="@+id/guidelineForwardIndication" />
+        app:layout_constraintBottom_toTopOf="@+id/imageViewBlank"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineForwardBackwardIndicationsRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guidelineForwardBackwardIndicationsLeft"
+        app:layout_constraintTop_toTopOf="@id/guidelineForwardBackwardIndicationsTop"
+        app:layout_constraintVertical_chainStyle="spread_inside" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineZeroFbIndication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.57" />
+    <ImageView
+        android:id="@+id/imageViewBlank"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:importantForAccessibility="no"
+        android:rotation="0"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewZeroFb"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineForwardBackwardIndicationsRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guidelineForwardBackwardIndicationsLeft"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewForward" />
 
     <ImageView
         android:id="@+id/imageViewZeroFb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imageViewZeroFb_description"
-        android:padding="2dp"
+        android:rotation="0"
         android:src="@drawable/zero_fb_indication_icon_v1_40"
-        app:layout_constraintStart_toStartOf="@+id/guidelineForwardBackwardIndications"
-        app:layout_constraintTop_toTopOf="@+id/guidelineZeroFbIndication" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBackwardIndication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.80" />
+        app:layout_constraintBottom_toTopOf="@+id/imageViewBackward"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineForwardBackwardIndicationsRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guidelineForwardBackwardIndicationsLeft"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewBlank" />
 
     <ImageView
         android:id="@+id/imageViewBackward"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:contentDescription="@string/imageViewBackward_description"
+        android:rotation="0"
+        android:src="@drawable/backward_indication_icon_v1_40"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineForwardBackwardIndicationsBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineForwardBackwardIndicationsRight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/guidelineForwardBackwardIndicationsLeft"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewZeroFb" />
+
+    <!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineSliderLeftRightTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/imageViewBackward_description"
-        android:padding="2dp"
-        android:src="@drawable/backward_indication_icon_v1_40"
-        app:layout_constraintStart_toStartOf="@+id/guidelineForwardBackwardIndications"
-        app:layout_constraintTop_toTopOf="@+id/guidelineBackwardIndication" />
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.86" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineSliderLeftRightBottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.98" />
+        app:layout_constraintGuide_percent="1.0" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineSliderLeftRightLeft"
@@ -353,47 +405,72 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineSliderLeftRightBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineSliderLeftRightRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineSliderLeftRightLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineSliderLeftRightTop"
         app:thumbColor="?attr/colorOnPrimary"
         app:tickColor="?attr/colorOnPrimary"
         app:trackColor="?attr/colorPrimary"
-        app:trackHeight="16dp" />
+        tools:ignore="VisualLintBounds" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineLeftRightIndications"
+        android:id="@+id/guidelineLeftRightIndicationsTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_percent="0.78" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeftRightIndicationsBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.89" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeftRightIndicationsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.323" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeftRightIndicationsRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.677" />
 
     <ImageView
         android:id="@+id/imageViewLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imageViewLeft_description"
-        android:padding="2dp"
         android:src="@drawable/left_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndications"
-        app:layout_constraintStart_toStartOf="@+id/sliderLeftRight" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndicationsBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeftRightIndicationsLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeftRightIndicationsTop" />
 
     <ImageView
         android:id="@+id/imageViewZeroLr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imageViewZeroLr_description"
-        android:padding="2dp"
         android:src="@drawable/zero_lr_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndications"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndicationsBottom"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/imageViewRight"
-        app:layout_constraintStart_toEndOf="@+id/imageViewLeft" />
+        app:layout_constraintStart_toEndOf="@+id/imageViewLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeftRightIndicationsTop" />
 
     <ImageView
         android:id="@+id/imageViewRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imageViewRight_description"
-        android:padding="2dp"
         android:src="@drawable/right_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndications"
-        app:layout_constraintEnd_toEndOf="@+id/sliderLeftRight" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndicationsBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineLeftRightIndicationsRight"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeftRightIndicationsTop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

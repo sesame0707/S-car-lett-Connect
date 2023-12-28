@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:clipChildren="false"
     tools:context=".ui.dashboard.DashboardFragment">
 
     <androidx.constraintlayout.widget.Guideline
@@ -51,7 +52,6 @@
         android:insetBottom="0dp"
         android:visibility="invisible"
         app:cornerRadius="@dimen/max_button_corner_radius"
-        app:icon="@drawable/baseline_settings_24"
         app:iconGravity="textStart"
         app:iconPadding="0dp"
         app:itemIconTint="?attr/colorOnPrimary"
@@ -85,7 +85,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintTop_toTopOf="@+id/guidelineButtonsTop"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonDrivingLights"
@@ -107,7 +107,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonBlank"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonRgbStripe"
@@ -129,7 +129,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintTop_toBottomOf="@+id/buttonStop"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonLeftBlinker"
@@ -151,7 +151,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonDrivingLights"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonRightBlinker"
@@ -173,7 +173,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintTop_toBottomOf="@+id/buttonRgbStripe"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonLeftParking"
@@ -195,7 +195,7 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsLeft"
         app:layout_constraintTop_toBottomOf="@+id/buttonLeftBlinker"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <Button
         android:id="@+id/buttonRightParking"
@@ -217,11 +217,12 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/guidelineButtonsCenter"
         app:layout_constraintTop_toBottomOf="@+id/buttonRightBlinker"
-        tools:ignore="ButtonStyle" />
+        tools:ignore="ButtonStyle,VisualLintOverlap" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:clipChildren="false"
         android:rotation="270"
         tools:context=".ui.dashboard.DashboardFragment">
 
@@ -230,14 +231,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.25" />
+            app:layout_constraintGuide_percent="0.25"
+            tools:ignore="VisualLintBounds" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineSliderAccelerateDecelerateBottom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            app:layout_constraintGuide_percent="0.32" />
+            app:layout_constraintGuide_percent="0.32"
+            tools:ignore="VisualLintBounds" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineSliderAccelerateDecelerateLeft"
@@ -259,6 +262,7 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:contentDescription="@string/D2_D3_description"
+            android:rotation="0"
             android:stepSize="1"
             android:value="0"
             android:valueFrom="-2"
@@ -267,7 +271,7 @@
             app:layout_constraintBottom_toTopOf="@+id/guidelineSliderAccelerateDecelerateBottom"
             app:layout_constraintEnd_toStartOf="@+id/guidelineSliderAccelerateDecelerateRight"
             app:layout_constraintStart_toStartOf="@+id/guidelineSliderAccelerateDecelerateLeft"
-            app:layout_constraintTop_toTopOf="@+id/guidelineSliderAccelerateDecelerateTop"
+            app:layout_constraintTop_toBottomOf="@+id/guidelineSliderAccelerateDecelerateTop"
             app:thumbColor="?attr/colorOnPrimary"
             app:tickColor="?attr/colorOnPrimary"
             app:trackColor="?attr/colorPrimary"
@@ -319,8 +323,9 @@
             android:id="@+id/imageViewBlank"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:importantForAccessibility="no"
             android:rotation="90"
-            android:src="@drawable/transparent_background_v1_40"
+            android:visibility="invisible"
             app:layout_constraintBottom_toTopOf="@+id/guidelineForwardBackwardIndicationsBottom"
             app:layout_constraintDimensionRatio="1:1"
             app:layout_constraintEnd_toStartOf="@+id/imageViewForward"
@@ -403,7 +408,8 @@
         app:layout_constraintTop_toTopOf="@+id/guidelineSliderLeftRightTop"
         app:thumbColor="?attr/colorOnPrimary"
         app:tickColor="?attr/colorOnPrimary"
-        app:trackColor="?attr/colorPrimary" />
+        app:trackColor="?attr/colorPrimary"
+        tools:ignore="VisualLintBounds" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineLeftRightIndicationsTop"

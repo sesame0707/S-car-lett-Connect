@@ -1,7 +1,9 @@
 package com.sesame0707.scarlettconnect
 
 import android.content.Context
+import android.util.DisplayMetrics
 import android.widget.Toast
+import java.lang.Float.min
 import java.net.Socket
 
 class CommonMethods {
@@ -43,5 +45,12 @@ class CommonMethods {
         }
 
         return toast
+    }
+
+    fun getSliderTrackHeight(displayMetrics: DisplayMetrics): Int {
+        val dpHeight = displayMetrics.heightPixels / displayMetrics.density
+        val dpWidth = displayMetrics.widthPixels / displayMetrics.density
+
+        return (min(dpHeight, dpWidth) / 9).toInt()
     }
 }

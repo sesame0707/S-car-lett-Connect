@@ -9,4 +9,5 @@ object CommonVariables {
     var sliderAccelerateDecelerateCurrentValue: Int = 0
     var sliderLeftRightPreviousValue: Int = 0
     var sliderLeftRightCurrentValue: Int = 0
+    var sliderTrackHeight: Int = 0
 }
