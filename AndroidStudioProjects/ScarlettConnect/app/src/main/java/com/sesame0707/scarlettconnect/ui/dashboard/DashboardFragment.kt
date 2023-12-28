@@ -11,6 +11,7 @@ import com.google.android.material.slider.Slider
 import com.sesame0707.scarlettconnect.CommonMethods
 import com.sesame0707.scarlettconnect.CommonVariables
 import com.sesame0707.scarlettconnect.databinding.FragmentDashboardBinding
+import java.lang.Float.min
 import kotlin.concurrent.thread
 
 class DashboardFragment : Fragment() {
@@ -33,10 +34,20 @@ class DashboardFragment : Fragment() {
         val root: View = binding.root
         CommonVariables.toast = Toast.makeText(context, null, Toast.LENGTH_SHORT)
         commonMethods = CommonMethods()
+
+        val displayMetrics = requireContext().resources.displayMetrics
+        val dpHeight = displayMetrics.heightPixels / displayMetrics.density
+        val dpWidth = displayMetrics.widthPixels / displayMetrics.density
+        val sliderTrackHeight = (min(dpHeight, dpWidth) / 9).toInt()
+
+        // Sliders' initialization
         sliderAccelerateDecelerate = _binding!!.sliderAccelerateDecelerate
+        sliderAccelerateDecelerate!!.trackHeight = sliderTrackHeight
         sliderAccelerateDecelerate!!.value =
             CommonVariables.sliderAccelerateDecelerateCurrentValue.toFloat()
+
         sliderLeftRight = _binding!!.sliderLeftRight
+        sliderLeftRight!!.trackHeight = sliderTrackHeight
         sliderLeftRight!!.value =
             CommonVariables.sliderLeftRightCurrentValue.toFloat()
 

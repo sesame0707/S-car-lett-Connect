@@ -219,105 +219,152 @@
         app:layout_constraintTop_toBottomOf="@+id/buttonRightBlinker"
         tools:ignore="ButtonStyle" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineSliderAccelerateDecelerateBottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.50" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineSliderAccelerateDecelerateLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="-0.35"
-        tools:ignore="VisualLintBounds" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineSliderAccelerateDecelerateRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.55" />
-
-    <com.google.android.material.slider.Slider
-        android:id="@+id/sliderAccelerateDecelerate"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:contentDescription="@string/D2_D3_description"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:rotation="270"
-        android:stepSize="1"
-        android:value="0"
-        android:valueFrom="-2"
-        android:valueTo="4"
-        app:labelBehavior="gone"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineSliderAccelerateDecelerateBottom"
-        app:layout_constraintEnd_toStartOf="@+id/guidelineSliderAccelerateDecelerateRight"
-        app:layout_constraintStart_toStartOf="@+id/guidelineSliderAccelerateDecelerateLeft"
-        app:thumbColor="?attr/colorOnPrimary"
-        app:tickColor="?attr/colorOnPrimary"
-        app:trackColor="?attr/colorPrimary"
-        app:trackHeight="16dp"
-        tools:ignore="VisualLintBounds" />
+        tools:context=".ui.dashboard.DashboardFragment">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSliderAccelerateDecelerateTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSliderAccelerateDecelerateBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.32" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSliderAccelerateDecelerateLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.05"
+            tools:ignore="VisualLintBounds" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineSliderAccelerateDecelerateRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.95" />
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/sliderAccelerateDecelerate"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/D2_D3_description"
+            android:stepSize="1"
+            android:value="0"
+            android:valueFrom="-2"
+            android:valueTo="4"
+            app:labelBehavior="gone"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineSliderAccelerateDecelerateBottom"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineSliderAccelerateDecelerateRight"
+            app:layout_constraintStart_toStartOf="@+id/guidelineSliderAccelerateDecelerateLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineSliderAccelerateDecelerateTop"
+            app:thumbColor="?attr/colorOnPrimary"
+            app:tickColor="?attr/colorOnPrimary"
+            app:trackColor="?attr/colorPrimary"
+            tools:ignore="VisualLintBounds" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineForwardBackwardIndicationsTop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.30" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineForwardBackwardIndicationsBottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.355" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineForwardBackwardIndicationsLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.056" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guidelineForwardBackwardIndicationsRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.944" />
+
+        <ImageView
+            android:id="@+id/imageViewForward"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/imageViewForward_description"
+            android:rotation="90"
+            android:src="@drawable/forward_indication_icon_v1_40"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineForwardBackwardIndicationsBottom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/guidelineForwardBackwardIndicationsRight"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageViewBlank"
+            app:layout_constraintTop_toTopOf="@+id/guidelineForwardBackwardIndicationsTop" />
+
+        <ImageView
+            android:id="@+id/imageViewBlank"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:rotation="90"
+            android:src="@drawable/transparent_background_v1_40"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineForwardBackwardIndicationsBottom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewForward"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageViewZeroFb"
+            app:layout_constraintTop_toTopOf="@+id/guidelineForwardBackwardIndicationsTop" />
+
+        <ImageView
+            android:id="@+id/imageViewZeroFb"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/imageViewZeroFb_description"
+            android:rotation="90"
+            android:src="@drawable/zero_fb_indication_icon_v1_40"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineForwardBackwardIndicationsBottom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewBlank"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/imageViewBackward"
+            app:layout_constraintTop_toTopOf="@+id/guidelineForwardBackwardIndicationsTop" />
+
+        <ImageView
+            android:id="@+id/imageViewBackward"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/imageViewBackward_description"
+            android:rotation="90"
+            android:src="@drawable/backward_indication_icon_v1_40"
+            app:layout_constraintBottom_toTopOf="@+id/guidelineForwardBackwardIndicationsBottom"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toStartOf="@+id/imageViewZeroFb"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_chainStyle="spread_inside"
+            app:layout_constraintStart_toEndOf="@+id/guidelineForwardBackwardIndicationsLeft"
+            app:layout_constraintTop_toTopOf="@+id/guidelineForwardBackwardIndicationsTop" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineForwardBackwardIndications"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.125" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineForwardIndication"
+        android:id="@+id/guidelineSliderLeftRightTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.21" />
-
-    <ImageView
-        android:id="@+id/imageViewForward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/imageViewForward_description"
-        android:padding="2dp"
-        android:src="@drawable/forward_indication_icon_v1_40"
-        app:layout_constraintStart_toStartOf="@+id/guidelineForwardBackwardIndications"
-        app:layout_constraintTop_toTopOf="@+id/guidelineForwardIndication" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineZeroFbIndication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.51" />
-
-    <ImageView
-        android:id="@+id/imageViewZeroFb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/imageViewZeroFb_description"
-        android:padding="2dp"
-        android:src="@drawable/zero_fb_indication_icon_v1_40"
-        app:layout_constraintStart_toStartOf="@+id/guidelineForwardBackwardIndications"
-        app:layout_constraintTop_toTopOf="@+id/guidelineZeroFbIndication" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineBackwardIndication"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.66" />
-
-    <ImageView
-        android:id="@+id/imageViewBackward"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/imageViewBackward_description"
-        android:padding="2dp"
-        android:src="@drawable/backward_indication_icon_v1_40"
-        app:layout_constraintStart_toStartOf="@+id/guidelineForwardBackwardIndications"
-        app:layout_constraintTop_toTopOf="@+id/guidelineBackwardIndication" />
+        app:layout_constraintGuide_percent="0.88" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guidelineSliderLeftRightBottom"
@@ -353,47 +400,71 @@
         app:layout_constraintBottom_toTopOf="@+id/guidelineSliderLeftRightBottom"
         app:layout_constraintEnd_toStartOf="@+id/guidelineSliderLeftRightRight"
         app:layout_constraintStart_toStartOf="@+id/guidelineSliderLeftRightLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineSliderLeftRightTop"
         app:thumbColor="?attr/colorOnPrimary"
         app:tickColor="?attr/colorOnPrimary"
-        app:trackColor="?attr/colorPrimary"
-        app:trackHeight="16dp" />
+        app:trackColor="?attr/colorPrimary" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guidelineLeftRightIndications"
+        android:id="@+id/guidelineLeftRightIndicationsTop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.905" />
+        app:layout_constraintGuide_percent="0.84" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeftRightIndicationsBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.895" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeftRightIndicationsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.056" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineLeftRightIndicationsRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.944" />
 
     <ImageView
         android:id="@+id/imageViewLeft"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imageViewLeft_description"
-        android:padding="2dp"
         android:src="@drawable/left_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndications"
-        app:layout_constraintStart_toStartOf="@+id/sliderLeftRight" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndicationsBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintStart_toStartOf="@+id/guidelineLeftRightIndicationsLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeftRightIndicationsTop" />
 
     <ImageView
         android:id="@+id/imageViewZeroLr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imageViewZeroLr_description"
-        android:padding="2dp"
         android:src="@drawable/zero_lr_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndications"
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndicationsBottom"
+        app:layout_constraintDimensionRatio="1:1"
         app:layout_constraintEnd_toStartOf="@+id/imageViewRight"
-        app:layout_constraintStart_toEndOf="@+id/imageViewLeft" />
+        app:layout_constraintStart_toEndOf="@+id/imageViewLeft"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeftRightIndicationsTop" />
 
     <ImageView
         android:id="@+id/imageViewRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:contentDescription="@string/imageViewRight_description"
-        android:padding="2dp"
         android:src="@drawable/right_indication_icon_v1_40"
-        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndications"
-        app:layout_constraintEnd_toEndOf="@+id/sliderLeftRight" />
+        app:layout_constraintBottom_toTopOf="@+id/guidelineLeftRightIndicationsBottom"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toStartOf="@+id/guidelineLeftRightIndicationsRight"
+        app:layout_constraintTop_toTopOf="@+id/guidelineLeftRightIndicationsTop" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
