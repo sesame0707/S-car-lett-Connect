@@ -55,7 +55,14 @@ class DashboardFragment : Fragment() {
 
             // Setting sliderAccelerateDecelerate to neutral state
             CommonVariables.isStopping = true
-            sliderAccelerateDecelerate!!.value = 0.toFloat()
+            while (sliderAccelerateDecelerate!!.value.toInt() != 0) {
+                if (sliderAccelerateDecelerate!!.value > 0) {
+                    sliderAccelerateDecelerate!!.value = sliderAccelerateDecelerate!!.value - 1
+                } else {
+                    sliderAccelerateDecelerate!!.value = sliderAccelerateDecelerate!!.value + 1
+                }
+            }
+            CommonVariables.isStopping = false
         }
 
         val buttonDrivingLights: Button = _binding!!.buttonDrivingLights
@@ -122,8 +129,6 @@ class DashboardFragment : Fragment() {
                     CommonVariables.toast =
                         commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 12)
                 }
-            } else {
-                CommonVariables.isStopping = false
             }
             CommonVariables.sliderAccelerateDeceleratePreviousValue =
                 CommonVariables.sliderAccelerateDecelerateCurrentValue
