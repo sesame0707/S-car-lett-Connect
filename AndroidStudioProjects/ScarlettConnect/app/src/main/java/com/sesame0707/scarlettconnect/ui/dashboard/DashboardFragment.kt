@@ -54,13 +54,8 @@ class DashboardFragment : Fragment() {
                 commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 1)
 
             // Setting sliderAccelerateDecelerate to neutral state
-            while (sliderAccelerateDecelerate!!.value.toInt() != 0) {
-                if (sliderAccelerateDecelerate!!.value > 0) {
-                    sliderAccelerateDecelerate!!.value = sliderAccelerateDecelerate!!.value - 1
-                } else {
-                    sliderAccelerateDecelerate!!.value = sliderAccelerateDecelerate!!.value + 1
-                }
-            }
+            CommonVariables.isStopping = true
+            sliderAccelerateDecelerate!!.value = 0.toFloat()
         }
 
         val buttonDrivingLights: Button = _binding!!.buttonDrivingLights
@@ -119,12 +114,16 @@ class DashboardFragment : Fragment() {
         sliderAccelerateDecelerate!!.addOnChangeListener(Slider.OnChangeListener { _, _, _ ->
             CommonVariables.sliderAccelerateDecelerateCurrentValue =
                 sliderAccelerateDecelerate!!.value.toInt()
-            if (CommonVariables.sliderAccelerateDecelerateCurrentValue > CommonVariables.sliderAccelerateDeceleratePreviousValue) {
-                CommonVariables.toast =
-                    commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 11)
+            if (!CommonVariables.isStopping) {
+                if (CommonVariables.sliderAccelerateDecelerateCurrentValue > CommonVariables.sliderAccelerateDeceleratePreviousValue) {
+                    CommonVariables.toast =
+                        commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 11)
+                } else {
+                    CommonVariables.toast =
+                        commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 12)
+                }
             } else {
-                CommonVariables.toast =
-                    commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 12)
+                CommonVariables.isStopping = false
             }
             CommonVariables.sliderAccelerateDeceleratePreviousValue =
                 CommonVariables.sliderAccelerateDecelerateCurrentValue
