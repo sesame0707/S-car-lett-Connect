@@ -54,7 +54,7 @@ class DashboardFragment : Fragment() {
                 commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 1)
 
             // Setting sliderAccelerateDecelerate to neutral state
-            CommonVariables.isStopping = true
+            CommonVariables.sliderAccelerateDecelerateReset = true
             while (sliderAccelerateDecelerate!!.value.toInt() != 0) {
                 if (sliderAccelerateDecelerate!!.value > 0) {
                     sliderAccelerateDecelerate!!.value = sliderAccelerateDecelerate!!.value - 1
@@ -62,7 +62,18 @@ class DashboardFragment : Fragment() {
                     sliderAccelerateDecelerate!!.value = sliderAccelerateDecelerate!!.value + 1
                 }
             }
-            CommonVariables.isStopping = false
+            CommonVariables.sliderAccelerateDecelerateReset = false
+
+            // Setting sliderLeftRight to neutral state
+            CommonVariables.sliderLeftRightReset = true
+            while (sliderLeftRight!!.value.toInt() != 0) {
+                if (sliderLeftRight!!.value > 0) {
+                    sliderLeftRight!!.value = sliderLeftRight!!.value - 1
+                } else {
+                    sliderLeftRight!!.value = sliderLeftRight!!.value + 1
+                }
+            }
+            CommonVariables.sliderLeftRightReset = false
         }
 
         val buttonDrivingLights: Button = _binding!!.buttonDrivingLights
@@ -113,7 +124,7 @@ class DashboardFragment : Fragment() {
                             true
                         )
                 }
-                Thread.sleep(5000)
+                Thread.sleep(CommonVariables.acknowledgePacketsFrequency)
             }
         }
 
@@ -121,7 +132,7 @@ class DashboardFragment : Fragment() {
         sliderAccelerateDecelerate!!.addOnChangeListener(Slider.OnChangeListener { _, _, _ ->
             CommonVariables.sliderAccelerateDecelerateCurrentValue =
                 sliderAccelerateDecelerate!!.value.toInt()
-            if (!CommonVariables.isStopping) {
+            if (!CommonVariables.sliderAccelerateDecelerateReset) {
                 if (CommonVariables.sliderAccelerateDecelerateCurrentValue > CommonVariables.sliderAccelerateDeceleratePreviousValue) {
                     CommonVariables.toast =
                         commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 11)
@@ -137,12 +148,14 @@ class DashboardFragment : Fragment() {
         sliderLeftRight!!.addOnChangeListener(Slider.OnChangeListener { _, _, _ ->
             CommonVariables.sliderLeftRightCurrentValue =
                 sliderLeftRight!!.value.toInt()
-            if (CommonVariables.sliderLeftRightCurrentValue > CommonVariables.sliderLeftRightPreviousValue) {
-                CommonVariables.toast =
-                    commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 14)
-            } else {
-                CommonVariables.toast =
-                    commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 13)
+            if (!CommonVariables.sliderLeftRightReset) {
+                if (CommonVariables.sliderLeftRightCurrentValue > CommonVariables.sliderLeftRightPreviousValue) {
+                    CommonVariables.toast =
+                        commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 14)
+                } else {
+                    CommonVariables.toast =
+                        commonMethods!!.sendWifiDirectPacket(CommonVariables.toast, context, 13)
+                }
             }
             CommonVariables.sliderLeftRightPreviousValue =
                 CommonVariables.sliderLeftRightCurrentValue

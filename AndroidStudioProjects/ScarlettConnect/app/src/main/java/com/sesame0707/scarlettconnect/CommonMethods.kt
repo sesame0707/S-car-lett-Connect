@@ -22,6 +22,13 @@ class CommonMethods {
         return toast
     }
 
+    fun getSliderTrackHeight(displayMetrics: DisplayMetrics): Int {
+        val dpHeight = displayMetrics.heightPixels / displayMetrics.density
+        val dpWidth = displayMetrics.widthPixels / displayMetrics.density
+
+        return (min(dpHeight, dpWidth) / 9).toInt()
+    }
+
     fun sendWifiDirectPacket(
         _toast: Toast?,
         context: Context?,
@@ -45,12 +52,5 @@ class CommonMethods {
         }
 
         return toast
-    }
-
-    fun getSliderTrackHeight(displayMetrics: DisplayMetrics): Int {
-        val dpHeight = displayMetrics.heightPixels / displayMetrics.density
-        val dpWidth = displayMetrics.widthPixels / displayMetrics.density
-
-        return (min(dpHeight, dpWidth) / 9).toInt()
     }
 }
