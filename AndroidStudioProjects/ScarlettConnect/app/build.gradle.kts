@@ -11,8 +11,8 @@ android {
         applicationId = "com.sesame0707.scarlettconnect"
         minSdk = 28
         targetSdk = 33
-        versionCode = 4
-        versionName = "1.2.1"
+        versionCode = 5
+        versionName = "1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
