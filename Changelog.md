@@ -11,3 +11,6 @@ Version 1.2 (versionCode = 3):
 
 Version 1.2.1 (versionCode = 4):
   - stop procedure has been fixed
+
+Version 1.3 (versionCode = 5):
+  - reset sliderLeftRight procedure has been added to stop procedure
