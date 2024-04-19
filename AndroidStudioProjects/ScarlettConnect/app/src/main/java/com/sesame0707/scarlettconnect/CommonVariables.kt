@@ -4,7 +4,7 @@ import android.widget.Toast
 
 object CommonVariables {
     var targetIpAddress = "0.0.0.0"
-    var acknowledgePacketsFrequency: Long = 5000
+    var acknowledgePacketsFrequency: Long = 3000
     var toast: Toast? = null
     var sliderTrackHeight: Int = 0
 
