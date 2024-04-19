@@ -42,8 +42,8 @@
     <string name="app_version_heading">App version:</string>
     <string name="app_description_heading">App description:</string>
 
-    <string name="app_author_content">Peter Grala</string>
-    <string name="app_description_content">This app is made for driving S(car)lett cars, which are part of the S(car)lett project.</string>
+    <string name="app_author_content">Piotr Grala</string>
+    <string name="app_description_content">This app is made for driving and managing S(car)lett cars, which are part of S(car)lett project.</string>
 
     <!-- Toast messages -->
     <string name="error_send_wifi_direct_packet">Car is not connected!</string>
