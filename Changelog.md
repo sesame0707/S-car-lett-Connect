@@ -14,3 +14,7 @@ Version 1.2.1 (versionCode = 4):
 
 Version 1.3 (versionCode = 5):
   - reset sliderLeftRight procedure has been added to stop procedure
+
+Version 1.4 (versionCode = 6):
+  - acknowledge Wi-Fi Direct packets' sending frequency has been increased,
+  - "About" view has been updated
