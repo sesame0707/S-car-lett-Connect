@@ -5,9 +5,9 @@
 # Covers files to be ignored for android development using Android Studio.
 
 # Built application files
-# *.apk
-# *.ap_
-# *.aab
+*.apk
+*.ap_
+*.aab
 
 # Files for the ART/Dalvik VM
 *.dex
@@ -134,6 +134,3 @@ fabric.properties
 !/gradle/wrapper/gradle-wrapper.jar
 
 # End of https://www.toptal.com/developers/gitignore/api/androidstudio
-
-# Additional ignored items
-.idea/deploymentTargetDropDown.xml
